@@ -1,0 +1,115 @@
+/**
+ * FRAMEWORK 
+ *
+ * LAYOUT
+ *
+ * NAV
+ * 
+ */
+
+
+
+
+
+
+/*------------------------------------*\
+    #SECTION-FRAMEWORK
+\*------------------------------------*/
+
+.f40 {
+	font-size: 40px;
+}
+
+.f16 {
+	font-size: 18px;
+}
+
+.fb {
+	font-weight: bold;
+}
+
+.p10 {
+	padding: 10px;
+}
+
+.m-tt {
+	font-size: 63px;
+	color: #333;
+	font-weight: bold;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #SECTION-MEDIA
+\*------------------------------------*/
+
+@media screen
+{
+
+} 
+
+@media print
+{
+	
+}
+
+
+
+/*------------------------------------*\
+    #SECTION-LAYOUT
+\*------------------------------------*/
+
+.g-hd {
+	background-color: #efefef;
+}
+
+.g-wrap {
+	width: 1100px;
+	margin: 0 auto;
+}
+
+
+
+
+/*------------------------------------*\
+    #SECTION-NAV
+\*------------------------------------*/
+
+.nav__item {
+	display: inline-block;
+	width: 90px;
+	height: 90px;
+	color: white;
+	line-height: 90px;
+	float: left;
+	margin-right: 2px;
+	text-align: center;
+}
+
+	.nav__item:hover {
+		background-color: #666;
+	}
+
+	.nav__item--black {
+		background-color: black;
+	}
+
+	.nav__item--red {
+		background-color: #ed5d58;
+	}
+
+	.nav__item--blue {
+		background-color: #52bad4;
+	}
+
+	.nav__item--green {
+		background-color: #8cc023;
+	}
+
+
+
+
+
