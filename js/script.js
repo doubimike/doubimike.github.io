@@ -7,6 +7,17 @@ requirejs.config({
         circleProgress: 'circle-progress',
         backtop: 'backtop',
         bootstrap: 'bootstrap.min'
+    },
+    shim:{
+        velocity:{
+            deps:['jquery'],
+            exports:'velocity'
+        },
+        circleProgress:{
+            deps:['jquery'],
+            exports:'circleProgress'
+        },
+
     }
 });
 
@@ -22,18 +33,18 @@ requirejs(['jquery', 'fullPage', 'velocity', 'velocityui', 'circleProgress', 'ba
             paddingTop: '50px',
         });
 
-        // $('#about-me').velocity({
-        //     opacity:'1',
-        // },{
-        //     duration:1000
-        // });
+        $('#about-me').velocity({
+            opacity:'1',
+        },{
+            duration:1000
+        });
 
-        // $('#skills').velocity({
-        //     opacity:'1',
-        // },{
-        //     duration:1000,
-        //     delay:100
-        // });
+        $('#skills').velocity({
+            opacity:'1',
+        },{
+            duration:1000,
+            delay:100
+        });
 
         $('#circle-html').circleProgress({
             value: .8
