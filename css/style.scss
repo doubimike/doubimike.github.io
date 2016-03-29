@@ -1,3 +1,8 @@
+body {
+    font-family: Georgia, serif;
+    color: #111;
+}
+
 h2 {
     text-align: center;
 }
@@ -11,6 +16,10 @@ ul {
 a {
     text-decoration: none;
     color: #000;
+}
+
+.ov {
+    overflow: hidden;
 }
 
 #fullpageMenu {
@@ -53,15 +62,77 @@ a {
 }
 
 .self-img {
-	width: 200px;
+	width: 150px;
+    height: 150px;
+    overflow: hidden;
+    float: left;
+    margin: 0 40px;
+    border-radius: 100%;
+    opacity: .9;
+        border: 1px solid #ccc;
+        padding:3px;
+        box-sizing:border-box;
 	img {
 		width: 100%;
-		border-radius: 50%;
+        border-radius: 100%;
+
 	}
 }
 
 .tech {
-	div{
-		float: left;
-	}
+    max-width: 600px;
+    margin:0 auto;
+	.circle {
+    float: left;
+    width: 100px;
+    margin: 6px 6px 20px;
+    display:inline-block;
+    text-align: center;
+    line-height: 1.2;
+    position: relative;
+    strong {
+        position: absolute;
+        top:30px;
+        left:0;
+        width:100%;
+        text-align: center;
+        font-size: 30px;
+        i{
+            font-style: normal;
+            font-size: .6em;
+            font-weight: normal;
+        }
+    }
+    span {
+        display: block;
+        margin-top: 12px;
+    }
+}
+}
+
+.center {
+    text-align: center;
+}
+
+#about-me {
+    opacity:0;
+}
+#skills {
+    opacity:0;
+}
+
+.personal-info {
+    min-width: 300px;
+    max-width: 400px;
+    margin:0 auto;
+
+    .fa {
+        width: 28px;
+        text-align: center;
+    }
+}
+
+.fa-thumbs-o-up {
+    font-size: 35px;
+    width: 40px;
 }

@@ -6,7 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>DoubiMike's Website</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -20,30 +23,58 @@
     </ul>
     <div id="fullpage">
         <div class="section">
-            <h2>关于我</h2>
-            <div class="tech">
-                <div id="circle-html">
-                    HTML
-                </div>
-                <div id="circle-css">
-                    CSS
-                </div>
-                <div id="circle-js">
-                    JS
-                </div>
-                <div id="circle-jquery">
-                    jQuery
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="about-me">
+                            <h2 class="animated fadeInLeft"><i class="fa fa-user"></i> 关于我</h2>
+                            <div class="personal-info ov">
+                                <div class="self-img">
+                                    <img src="images/photo_2.png" alt="">
+                                </div>
+                                <p class="name"><i class="fa fa-male"></i> 张航</p>
+                                <p class="born"><i class="fa fa-clock-o"></i> 90年生</p>
+                                <p class="university"><i class="fa fa-graduation-cap"></i> 本科 国贸专业</p>
+                                <p class="phone"><i class="fa fa-phone"></i> 18611210114</p>
+                                <p class="email"><i class="fa fa-envelope-o"></i> doubimike@qq.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                    <div id="skills">
+                        <h2 class="animated fadeInRight"><i class="fa fa-thumbs-o-up animated pulse infinite"></i> 主要技能</h2>
+                        <div class="tech ov">
+                            <div class="circle" id="circle-html">
+                                <strong>80<i>%</i> </strong>
+                                <span>HTML</span>
+                            </div>
+                            <div class="circle" id="circle-css">
+                                <strong>80<i>%</i> </strong>
+                                <span>CSS</span>
+                            </div>
+                            <div class="circle" id="circle-js">
+                                <strong>60<i>%</i> </strong>
+                                <span>JS</span>
+                            </div>
+                            <div class="circle" id="circle-jquery">
+                                <strong>60<i>%</i> </strong>
+                                <span>jQuery</span>
+                            </div>
+                            <div class="circle" id="circle-python">
+                                <strong>40<i>%</i> </strong>
+                                <span>Python</span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
                 </div>
             </div>
-            <div class="personal-info">
-                <div class="self-img">
-                    <img src="images/photo.JPG" alt="">
+            <div class="test">
+                <div class="toolbar">
+                    <a href="javascript:;" id="backTop" class="toolbar-item toolbar-item-top">
+                        <span class="toolbar-btn">test</span>
+                    </a>
                 </div>
-                <p class="name">张航</p>
-                <p class="born">90年生</p>
-                <p class="university">本科</p>
-                <p class="phone">18611210114</p>
-                <p class="email">doubimike@qq.com</p>
             </div>
         </div>
         <div class="section">
@@ -57,22 +88,20 @@
                 </p>
             </div>
             <div class="slide">
-            淘宝首页
-				用到技术
-            <ul>
-            	<li>bem命名</li>
-            	<li>基本样式库分离</li>
-            	<li>Flexbox</li>
-            </ul>
-
+                淘宝首页 用到技术
+                <ul>
+                    <li>bem命名</li>
+                    <li>基本样式库分离</li>
+                    <li>Flexbox</li>
+                </ul>
             </div>
-            <div class="slide"> 
-            awwards整站模仿
-            <ul>
-            	<li>栅格系统</li>
-            	<li>响应式设计</li>
-            </ul>
-             </div>
+            <div class="slide">
+                awwards整站模仿
+                <ul>
+                    <li>栅格系统</li>
+                    <li>响应式设计</li>
+                </ul>
+            </div>
             <div class="slide"> Slide 4 </div>
         </div>
         <div class="section">
