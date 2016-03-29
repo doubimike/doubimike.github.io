@@ -90,12 +90,6 @@ a {
 .center {
   text-align: center; }
 
-#about-me {
-  opacity: 0; }
-
-#skills {
-  opacity: 0; }
-
 .personal-info {
   min-width: 300px;
   max-width: 400px;
