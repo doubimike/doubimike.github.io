@@ -17,6 +17,10 @@ requirejs.config({
             deps:['jquery'],
             exports:'circleProgress'
         },
+        bootstrap:{
+            deps:['jquery'],
+            exports:'bootstrap'
+        },
 
     }
 });
