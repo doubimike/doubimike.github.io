@@ -1,7 +1,7 @@
 body {
     font-family: Georgia, serif;
     color: #111;
-    background-color: #659ea9;
+    // background-color: #659ea9;
 }
 
 h2 {
@@ -191,5 +191,48 @@ a {
   100% {
     transform: rotate(1turn);
   }
+}
+
+#problem-solver {
+    position: absolute;
+    background:url(../images/problemsolver.png) no-repeat;
+}
+
+.top-down {
+    position: absolute;
+    -webkit-animation: arrow;
+    animation: arrow;
+    -webkit-animation-duration: 6s;
+    animation-duration: 6s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    z-index: 99;
+    bottom: 5.5%;
+    left: 50%;
+    width: 47px;
+    height: 26px;
+    margin-left: -23px;
+    background: url(../images/arrow-down.png)50% 0 no-repeat;
+
+}
+
+@-webkit-keyframes arrow {
+    0%, 100%, 88%, 94% {
+        bottom: 3.5%
+    }
+    91%,
+    97% {
+        bottom: 1.5%
+    }
+}
+
+@keyframes arrow {
+    0%, 100%, 88%, 94% {
+        bottom: 3.5%
+    }
+    91%,
+    97% {
+        bottom: 1.5%
+    }
 }
 

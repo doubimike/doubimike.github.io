@@ -3,7 +3,7 @@ body{
 }
 #jpreOverlay {
 	background-color: #659ea9;
-    // background-image: url(/static/img/slider/slide-bg-0-min.jpg);
+    background-image: url(../images/slide-bg-0-min.jpg);
     background-size: cover;
     position: fixed;
     top: 0;
@@ -21,14 +21,12 @@ body{
 }
 #jpreLoader{
 	width:300px;
-	height:25px;
+	height:2px;
 	box-shadow:0 0 7px 3px #fff;
 	-moz-box-shadow:0 0 7px 3px #fff;
 	-webkit-box-shadow:0 0 7px 3px #fff;
-	border-radius:25px;
-	-moz-border-radius:25px;
-	-webkit-border-radius:25px;
 }
+
 #jpreBar {
 	background: #fff;
     top: 66%;
