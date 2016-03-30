@@ -2,7 +2,14 @@ body{
 	display:none;
 }
 #jpreOverlay {
-	background-color: #000000;
+	background-color: #659ea9;
+    // background-image: url(/static/img/slider/slide-bg-0-min.jpg);
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0
 }
 #jpreSlide{
 	font-size:22px;
@@ -23,84 +30,9 @@ body{
 	-webkit-border-radius:25px;
 }
 #jpreBar {
-	border-radius:25px;
-	-moz-border-radius:25px;
-	-webkit-border-radius:25px;
-	
-	background-size:30px 30px;
-	-moz-background-size:30px 30px;
-	-webkit-background-size:30px 30px;
-	-o-background-size:30px 30px;
-	
-	box-shadow:
-      0 5px 5px rgba(255,255,255,0.6) inset,
-      0 -5px 7px rgba(0, 0, 0, 0.4) inset;
-   -moz-box-shadow:
-      0 5px 5px rgba(255,255,255,0.6) inset,
-      0 -5px 7px rgba(0, 0, 0, 0.4) inset;
-   -webkit-box-shadow:
-      0 5px 5px rgba(255,255,255,0.6) inset,
-      0 -5px 7px rgba(0, 0, 0, 0.4) inset;
-   filter: progid:DXImageTransform.Microsoft.gradient(
-      startColorstr='#33ffffff',
-      endColorstr='#33000000',
-      GradientType=0 );
-
-	background-color:#E07300;
-	background-image: -moz-linear-gradient(-45deg, 
-		rgba(255,255,255,0.15) 0%, 
-		rgba(255,255,255,0.15) 25%, 
-		rgba(255,255,255,0) 25%, 
-		rgba(255,255,255,0) 50%, 
-		rgba(255,255,255,0.15) 50%, 
-		rgba(255,255,255,0.15) 75%, 
-		rgba(255,255,255,0) 75%, 
-		rgba(255,255,255,0) 100%);
-	background-image: -webkit-gradient(linear, left top, right bottom, 
-		color-stop(0%,rgba(255,255,255,0.2)), 
-		color-stop(25%,rgba(255,255,255,0.2)), 
-		color-stop(25%,rgba(255,255,255,0)), 
-		color-stop(50%,rgba(255,255,255,0)), 
-		color-stop(50%,rgba(255,255,255,0.2)), 
-		color-stop(75%,rgba(255,255,255,0.2)),
-		color-stop(75%,rgba(255,255,255,0)),
-		color-stop(100%,rgba(255,255,255,0)));
-	background-image: -webkit-linear-gradient(-45deg, 
-		rgba(255,255,255,0.3) 0%,
-		rgba(255,255,255,0.3) 25%,
-		rgba(255,255,255,0) 25%,
-		rgba(255,255,255,0) 50%,
-		rgba(255,255,255,0.3) 50%,
-		rgba(255,255,255,0.3) 75%,
-		rgba(255,255,255,0) 75%,
-		rgba(255,255,255,0) 100%);
-	background-image: -o-linear-gradient(-45deg, 
-		rgba(255,255,255,0.15) 0%,
-		rgba(255,255,255,0.15) 25%,
-		rgba(255,255,255,0) 25%,
-		rgba(255,255,255,0) 50%,
-		rgba(255,255,255,0.15) 50%,
-		rgba(255,255,255,0.15) 75%,
-		rgba(255,255,255,0) 75%,
-		rgba(255,255,255,0) 100%);
-	background-image: -ms-linear-gradient(-45deg, 
-		rgba(255,255,255,0.15) 0%,
-		rgba(255,255,255,0.15) 25%,
-		rgba(255,255,255,0) 25%,
-		rgba(255,255,255,0) 50%,
-		rgba(255,255,255,0.15) 50%,
-		rgba(255,255,255,0.15) 75%,
-		rgba(255,255,255,0) 75%,
-		rgba(255,255,255,0) 100%);
-	background-image: linear-gradient(135deg, 
-		rgba(255,255,255,0.15) 0%,
-		rgba(255,255,255,0.15) 25%,
-		rgba(255,255,255,0) 25%,
-		rgba(255,255,255,0) 50%,
-		rgba(255,255,255,0.15) 50%,
-		rgba(255,255,255,0.15) 75%,
-		rgba(255,255,255,0) 75%,
-		rgba(255,255,255,0) 100%);
+	background: #fff;
+    top: 66%;
+    height: 2px;
 		
 	animation: progress 2s linear infinite;
 	-moz-animation: progress 2s linear infinite;
