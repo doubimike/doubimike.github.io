@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/jquery.fullPage.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/jpreloader.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.js"></script> -->
@@ -20,11 +21,11 @@
         <li class="active" data-menuanchor="page1"><a href="#page1">关于我</a></li>
         <li data-menuanchor="page2"><a href="#page2">提供主要技能</a></li>
         <li data-menuanchor="page3"><a href="#page3">技能证明</a></li>
-        <li data-menuanchor="page4"><a href="#page4">工作经历</a></li>
-        <li data-menuanchor="page5"><a href="#page5">转行原因</a></li>
     </ul>
     <div id="fullpage">
         <div class="section">
+            <div class="loader loader--spinningDisc">
+            </div>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
@@ -43,31 +44,31 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                    <div id="skills">
-                        <h2 class="animated fadeInRight"><i class="fa fa-thumbs-o-up animated pulse infinite"></i> 主要技能</h2>
-                        <div class="tech ov">
-                            <div class="circle" id="circle-html">
-                                <strong>80<i>%</i> </strong>
-                                <span>HTML</span>
-                            </div>
-                            <div class="circle" id="circle-css">
-                                <strong>80<i>%</i> </strong>
-                                <span>CSS</span>
-                            </div>
-                            <div class="circle" id="circle-js">
-                                <strong>60<i>%</i> </strong>
-                                <span>JS</span>
-                            </div>
-                            <div class="circle" id="circle-jquery">
-                                <strong>60<i>%</i> </strong>
-                                <span>jQuery</span>
-                            </div>
-                            <div class="circle" id="circle-python">
-                                <strong>40<i>%</i> </strong>
-                                <span>Python</span>
+                        <div id="skills">
+                            <h2 class="animated fadeInRight"><i class="fa fa-thumbs-o-up animated pulse infinite"></i> 主要技能</h2>
+                            <div class="tech ov">
+                                <div class="circle" id="circle-html">
+                                    <strong>80<i>%</i> </strong>
+                                    <span>HTML</span>
+                                </div>
+                                <div class="circle" id="circle-css">
+                                    <strong>80<i>%</i> </strong>
+                                    <span>CSS</span>
+                                </div>
+                                <div class="circle" id="circle-js">
+                                    <strong>60<i>%</i> </strong>
+                                    <span>JS</span>
+                                </div>
+                                <div class="circle" id="circle-jquery">
+                                    <strong>60<i>%</i> </strong>
+                                    <span>jQuery</span>
+                                </div>
+                                <div class="circle" id="circle-python">
+                                    <strong>40<i>%</i> </strong>
+                                    <span>Python</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     </div>
                 </div>
             </div>
@@ -79,11 +80,22 @@
                 </div>
             </div>
         </div>
-        <div class="section">
-            <h2>提供主要技能</h2>
-        </div>
-        <div class="section">
-            <div class="slide">
+        <div class="section" id="works">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3 taobao"></div>
+                    <div class="col-md-3">
+                        <a class="db" target="_blank" href="works/Awwwards/index.html" class="db"><img src="images/awwwards.png" alt="awwwards" class="awwwards"></a>
+                    </div>
+                    <div class="col-md-3">
+                        <a class="db" target="_blank" href="https://github.com/doubimike/HTML-CSS-Learning"><img src="images/htmlcss.png" alt="htmlcss" class="htmlcss"></a>
+                    </div>
+                    <div class="col-md-3">
+                        <a class="db" target="_blank" href="https://github.com/doubimike/JS-jQuery-Learning"><img src="images/jsjquery.png" alt="jsjquery" class="awwwards"></a>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="slide">
                 <h2>技能证明</h2>
                 <p class="github">
                     更多请点击我的github地址：
@@ -104,21 +116,23 @@
                     <li>响应式设计</li>
                 </ul>
             </div>
-            <div class="slide"> Slide 4 </div>
+            <div class="slide"> Slide 4 </div> -->
         </div>
         <div class="section">
             <h2>工作经历</h2>
-            <p>
-                1.类公务员 2.销售、市场、项目管理 最近的为在一家美国硅谷创业中国分公司做项目管理工作。
-            </p>
-        </div>
-        <div class="section">
+            <ul>
+                <li> 1.类似公务员的贸易推广工作；</li>
+                <li>2.最近为在一美国硅谷创业公司中国分部从事项目管理。</li>
+            </ul>
             <h2>转行原因</h2>
-            <p>走了这么远的路，才发现自己要成为一个创造者。 于是自学编程，义无反顾地走上这条路。
+            <p>走了这么远的路，才发现自己要成为一个创造者。
+                <br>遂自学编程，选择走这条道路。
             </p>
+            <h2>人生信条</h2>
+            <p>Be a problem solver, then be a maker.</p>
         </div>
     </div>
-    <a href="https://github.com/doubimike"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+    <a target="_blank" href="https://github.com/doubimike?tab=repositories"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
     <script src="js/require.js" data-main="js/script"></script>
 </body>
 
