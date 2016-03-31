@@ -1,6 +1,10 @@
 body {
   font-family: Georgia, serif;
-  color: #111; }
+  color: #111;
+  line-height: 1.2; }
+
+p {
+  margin: 10px 0; }
 
 h3 {
   margin-top: 0;
@@ -17,6 +21,47 @@ ul {
 a {
   text-decoration: none;
   color: #000; }
+
+* {
+  box-sizing: border-box; }
+
+.container {
+  width: 100%; }
+
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto; }
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px; }
+
+.col-md-6,
+.col-md-2,
+.col-md-3,
+.col-md-4 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  float: left; }
+
+.col-md-6 {
+  width: 50%; }
+
+.col-md-2 {
+  width: 16.66666667%; }
+
+.col-md-4 {
+  width: 33.33333333%; }
+
+.col-md-3 {
+  width: 25%; }
+
+#works .col-md-2 {
+  height: 100vh; }
 
 .ov {
   overflow: hidden; }
@@ -41,6 +86,11 @@ a {
   transform: scale(1.1); }
 
 .btn {
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  border-radius: 6px;
+  line-height: 50px;
   color: #fff;
   border: 1px solid #fff;
   margin-top: 10px;
@@ -48,7 +98,9 @@ a {
   .btn:hover {
     opacity: .7; }
 
-#fullpage, .section, .container, .row {
+#fullpage,
+.section,
+.container {
   min-width: 1200px; }
 
 #fullpageMenu {
@@ -58,9 +110,9 @@ a {
   top: 0;
   left: 0;
   width: 100%; }
-  #fullpageMenu li a {
+  #fullpageMenu a {
     display: inline-block;
-    width: 150px;
+    width: 200px;
     height: 40px;
     line-height: 40px;
     text-align: center;
@@ -68,7 +120,7 @@ a {
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.5);
     transition: all .3s; }
-    #fullpageMenu li a:hover {
+    #fullpageMenu a:hover {
       background-color: rgba(255, 255, 255, 0.8); }
   #fullpageMenu .active a {
     color: #fff;
@@ -117,15 +169,12 @@ a {
       display: block;
       margin-top: 12px; }
 
-#about-me {
-  opacity: 0; }
-
-#skills {
+#about-me, #skills {
   opacity: 0; }
 
 .personal-info {
-  min-width: 300px;
-  max-width: 400px;
+  min-width: 350px;
+  max-width: 450px;
   margin: 0 auto; }
   .personal-info .fa {
     width: 28px;
@@ -144,8 +193,6 @@ a {
   #works .col-md-4 {
     padding: 3px;
     height: 100vh; }
-  #works .col-md-2 {
-    height: 100vh; }
   #works .awwwards,
   #works .taobao {
     width: 100%;
@@ -157,7 +204,8 @@ a {
     top: 50%;
     text-align: center;
     transform: translateX(-50%) translateY(-50%);
-    color: #fff; }
+    color: #fff;
+    line-height: 1.4; }
   #works .art {
     top: 25%; }
     #works .art img {
@@ -188,15 +236,28 @@ a {
     border-radius: 50%;
     background-color: #fff;
     border: 5px solid #221713;
-    z-index: 3; }
+    z-index: 3;
+    text-align: center;
+    transition: color .5s; }
+    #works .weapon:hover {
+      color: #79A3AF; }
   #works .create-by-hands {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%); }
+    transform: translateX(-50%);
+    width: 69%; }
     #works .create-by-hands img {
-      width: 69vw;
+      width: 100%;
+      animation: scale 10s infinite linear;
       height: 100vh; }
 
+@keyframes scale {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.08); }
+  100% {
+    transform: scale(1); } }
 .loader--spinningDisc {
   border: solid 0.5em #9b59b6;
   border-right-color: transparent;
@@ -282,7 +343,8 @@ a {
       width: 200px;
       height: 200px;
       position: relative;
-      z-index: 3; }
+      z-index: 3;
+      vertical-align: middle; }
     #roads .walk .walk-pic {
       position: absolute;
       left: 0;
@@ -291,7 +353,8 @@ a {
       z-index: 2; }
     #roads .walk .problemsolver {
       position: relative;
-      z-index: 3; }
+      z-index: 3;
+      vertical-align: middle; }
   #roads .takeuph {
     height: 100vh; }
 
@@ -308,6 +371,9 @@ a {
   opacity: 0;
   transition: opacity 2s; }
 
+.fa-hand-o-right {
+  animation: vertical-shake 2s infinite; }
+
 @keyframes step {
   0% {
     height: 50vh; }
@@ -320,5 +386,15 @@ a {
     transform: rotate(0); }
   100% {
     transform: rotate(360deg); } }
+@keyframes vertical-shake {
+  0% {
+    transform: translateX(0); }
+  50% {
+    transform: translateX(20%); }
+  100% {
+    transform: translateX(0); } }
+@media (max-width: 1200px) {
+  #fp-nav {
+    display: none; } }
 
 /*# sourceMappingURL=style.css.map */

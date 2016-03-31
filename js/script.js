@@ -6,7 +6,7 @@ requirejs.config({
         velocityui: 'velocity.ui',
         circleProgress: 'circle-progress',
         backtop: 'backtop',
-        bootstrap: 'bootstrap.min',
+        // bootstrap: 'bootstrap.min',
         jpreLoader: 'jpreloader.min'
     },
     shim: {
@@ -18,10 +18,10 @@ requirejs.config({
             deps: ['jquery'],
             exports: 'circleProgress'
         },
-        bootstrap: {
-            deps: ['jquery'],
-            exports: 'bootstrap'
-        },
+        // bootstrap: {
+        //     deps: ['jquery'],
+        //     exports: 'bootstrap'
+        // },
         jpreLoader: {
             deps: ['jquery'],
             exports: 'jpreLoader'
@@ -30,7 +30,7 @@ requirejs.config({
     }
 });
 
-requirejs(['jquery', 'fullPage', 'velocity', 'velocityui', 'circleProgress', 'backtop', 'bootstrap', 'jpreLoader'], function($, fullpage, velocity, velocityui, circleProgress, backtop, bootstrap, jpreLoader) {
+requirejs(['jquery', 'fullPage', 'velocity', 'velocityui', 'circleProgress', 'jpreLoader'], function($, fullpage, velocity, velocityui, circleProgress, jpreLoader) {
     $(function() {
         $('body').jpreLoader({}, init);
         $('#fullpage').fullpage({
@@ -56,9 +56,7 @@ requirejs(['jquery', 'fullPage', 'velocity', 'velocityui', 'circleProgress', 'ba
 
                 }
 
-                if(index==1){
-                    $('#fullpageMenu li').css('float', 'initial');
-                }
+               
 
 
             },
