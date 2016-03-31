@@ -2,6 +2,10 @@ body {
   font-family: Georgia, serif;
   color: #111; }
 
+h3 {
+  margin-top: 0;
+  padding-top: 20px; }
+
 h2 {
   text-align: center; }
 
@@ -19,6 +23,22 @@ a {
 
 .db {
   display: block; }
+
+.br50 {
+  border-radius: 50%;
+  overflow: hidden; }
+
+.tac {
+  text-align: center; }
+
+.xycenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%); }
+
+.scale {
+  transform: scale(1.1); }
 
 #fullpageMenu {
   position: fixed;
@@ -90,9 +110,6 @@ a {
       display: block;
       margin-top: 12px; }
 
-.center {
-  text-align: center; }
-
 #about-me {
   opacity: 0; }
 
@@ -108,23 +125,55 @@ a {
     text-align: center; }
 
 .fa-thumbs-o-up {
-  font-size: 35px;
   width: 40px; }
-
-.awwwards, .jsjquery, .htmlcss {
-  width: 100%;
-  height: 100vh; }
 
 .flex {
   display: flex; }
 
-#works .taobao {
-  background: url(../images/taobao.png) no-repeat center center;
-  background-size: cover;
+#works {
   height: 100vh;
-  opacity: .8; }
-#works .col-md-3 {
-  padding: 3px; }
+  overflow: hidden; }
+  #works .col-md-4 {
+    padding: 3px;
+    height: 100vh; }
+  #works .col-md-2 {
+    height: 100vh; }
+  #works .awwwards,
+  #works .taobao {
+    width: 100%;
+    height: 100%;
+    transition: all .6s; }
+  #works .knowledge {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    transform: translateX(-50%) translateY(-50%); }
+  #works .heart {
+    top: 25%; }
+  #works .hand {
+    width: 150px;
+    height: 250px;
+    z-index: 1;
+    background: red;
+    position: absolute;
+    top: 50%; }
+  #works .hand--right {
+    left: 3px;
+    transform: skew(30deg) rotate(30deg) translateY(-50%); }
+  #works .hand--left {
+    right: 3px;
+    transform: skew(-30deg) rotate(-30deg) translateY(-50%); }
+  #works .weapon {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 40%;
+    border-radius: 50%;
+    background-color: gray;
+    z-index: 3; }
 
 .loader--spinningDisc {
   border: solid 0.5em #9b59b6;
@@ -147,10 +196,6 @@ a {
     background-color: #2ecc71; }
   100% {
     transform: rotate(1turn); } }
-#problem-solver {
-  position: absolute;
-  background: url(../images/problemsolver.png) no-repeat; }
-
 .top-down {
   position: absolute;
   -webkit-animation: arrow;
@@ -168,16 +213,71 @@ a {
   background: url(../images/arrow-down.png) 50% 0 no-repeat; }
 
 @-webkit-keyframes arrow {
-  0%, 100%, 88%, 94% {
+  0%,
+    100%,
+    88%,
+    94% {
     bottom: 3.5%; }
   91%,
     97% {
     bottom: 1.5%; } }
 @keyframes arrow {
-  0%, 100%, 88%, 94% {
+  0%,
+    100%,
+    88%,
+    94% {
     bottom: 3.5%; }
   91%,
     97% {
     bottom: 1.5%; } }
+#roads .foot {
+  height: 50vh;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 0 0 30px 30px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); }
+  #roads .foot img {
+    width: 80%;
+    border-radius: 50%; }
+#roads .step--left {
+  animation: step infinite 2s; }
+#roads .step--right {
+  animation: step infinite 2s 1s; }
+#roads .walk {
+  position: absolute;
+  top: 65%;
+  left: 10%;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 20s 2s linear; }
+  #roads .walk .maker {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    z-index: 3; }
+  #roads .walk .walk-pic {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all linear 20s 2.6s;
+    z-index: 2; }
+  #roads .walk .problemsolver {
+    position: relative;
+    z-index: 3; }
+#roads .takeuph {
+  height: 100vh; }
+
+#problem-solver {
+  position: absolute;
+  background: url(../images/problemsolver.png) no-repeat; }
+
+@keyframes step {
+  0% {
+    height: 50vh; }
+  50% {
+    height: 55vh; }
+  100% {
+    height: 50vh; } }
 
 /*# sourceMappingURL=style.css.map */
