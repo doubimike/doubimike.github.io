@@ -51,6 +51,22 @@ a {
 .scale {
     transform: scale(1.1);
 }
+.btn {
+    color:#fff;
+    border:1px solid #fff;
+    margin-top: 10px;
+    background-color: rgba(0,0,0,.3);
+    &:hover {
+        opacity: .7;
+        // color:blue;
+    }
+}
+
+
+
+#fullpage,.section,.container,.row {
+    min-width: 1200px;
+}
 
 #fullpageMenu {
     position: fixed;
@@ -59,17 +75,16 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-    height: 40px;
-    padding-top: 10px;
+    // height: 40px;
+    // padding-top: 10px;
     li {
-        float: left;
         a {
             display: inline-block;
             width: 150px;
             height: 40px;
             line-height: 40px;
             text-align: center;
-            margin: 0 10px;
+            margin: 10px 10px;
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.5);
             transition: all .3s;
@@ -78,6 +93,7 @@ a {
             }
         }
     }
+
     .active {
         a {
             color: #fff;
@@ -167,6 +183,8 @@ a {
 #works {
     height: 100vh;
     overflow: hidden;
+    // background:url(../images/hands.jpg) no-repeat center center;
+    background-size: cover;
     .col-md-4 {
         padding: 3px;
         height: 100vh;
@@ -187,15 +205,27 @@ a {
         top: 50%;
         text-align: center;
         transform: translateX(-50%) translateY(-50%);
+        color:#fff;
+
     }
-    .heart {
+    .art {
+        // border:1px solid #ccc;
+        // padding: 2px;
+        img {width: 250px;
+        height:250px;
+        // opacity: .8;
+        animation:rotate 20s infinite linear;
+
+        box-shadow: 0 0 3px rgba(0,0,0,.5);
+    }
         top: 25%
+
     }
     .hand {
         width: 150px;
         height: 250px;
         z-index: 1;
-        background: red;
+        background: #3EA0E9;
         position: absolute;
         top: 50%;
     }
@@ -215,8 +245,19 @@ a {
         transform: translateX(-50%);
         top: 40%;
         border-radius: 50%;
-        background-color: gray;
+        background-color: #fff;
+        border:5px solid #221713;
         z-index: 3;
+    }
+    .create-by-hands {
+        position:absolute;
+        left:50%;
+        transform:translateX(-50%);
+        img {
+            width: 69vw;
+
+            height: 100vh;
+        }
     }
 }
 
@@ -290,6 +331,7 @@ a {
 }
 
 #roads {
+    background:url(../images/map-light.jpg) center center ;
     .foot {
         height: 50vh;
         background-color: #fff;
@@ -315,7 +357,10 @@ a {
         width: 0;
         overflow: hidden;
         white-space: nowrap;
-        transition:all 20s 2s linear;
+        transition:width 20s 2s linear;
+        color:#333;
+        font-size: 20px;
+        font-weight: bolder;
         .maker {
             width: 200px;
             height: 200px;
@@ -326,7 +371,7 @@ a {
             position: absolute;
             left:0;
             top:0;
-            transition:all linear 20s 2.6s;
+            transition:left linear 20s 2.6s;
             z-index: 2;
         }
         .problemsolver {
@@ -344,6 +389,17 @@ a {
     background: url(../images/problemsolver.png) no-repeat;
 }
 
+.come-on-to-meet-me {
+    position: absolute;
+    right:30px;
+    bottom: 30px;
+    font-size: 25px;
+    color:#333;
+    opacity: 0;
+    transition:opacity 2s;
+}
+
+
 @keyframes step {
     0%{
         height: 50vh;
@@ -355,3 +411,13 @@ a {
         height: 50vh;
     }
 }
+
+@keyframes rotate {
+    0% {
+        transform:rotate(0);
+    }
+    100% {
+        transform:rotate(360deg);
+    }
+}
+

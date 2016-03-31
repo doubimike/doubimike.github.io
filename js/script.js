@@ -46,8 +46,18 @@ requirejs(['jquery', 'fullPage', 'velocity', 'velocityui', 'circleProgress', 'ba
 
                 //after leaving section 2
                 if(index==3){
-                    $('.foot--left').removeClass('step--left');
-                    $('.foot--right').removeClass('step--right');
+                    // $('.foot--left').removeClass('step--left');
+                    // $('.foot--right').removeClass('step--right');
+                    
+                }
+
+                if (index==3 || index==2) {
+                    setCircle();
+
+                }
+
+                if(index==1){
+                    $('#fullpageMenu li').css('float', 'initial');
                 }
 
 
@@ -61,14 +71,21 @@ requirejs(['jquery', 'fullPage', 'velocity', 'velocityui', 'circleProgress', 'ba
                         $('.foot--left').addClass('step--left');
                     $('.foot--right').addClass('step--right');
                 }, 1000);
-                    $('.walk').width("80vw");
-                    $('.walk-pic').css('left', '80vw');
+                    $('.walk').width("100vw");
+                    $('.walk-pic').css('left', '100vw');
+                    setTimeout(function(){
+                        $('.come-on-to-meet-me').css('opacity', '1');
+                    },21000)
                 };
 
                 //using anchorLink
                 if (anchorLink == 'secondSlide') {
                     // alert("Section 2 ended loading");
                 }
+
+                // if (index==1) {
+                //     $('#fullpageMenu li').css('float', 'left');
+                // }
 
 
 
