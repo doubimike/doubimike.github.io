@@ -76,10 +76,6 @@ a {
     width: 25%;
 }
 
-#works .col-md-2 {
-    height: 100vh;
-}
-
 .ov {
     overflow: hidden;
 }
@@ -136,22 +132,20 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-   
-        a {
-            display: inline-block;
-            width: 200px;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            margin: 10px 10px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.5);
-            transition: all .3s;
-            &:hover {
-                background-color: rgba(255, 255, 255, 0.8);
-            }
+    a {
+        display: inline-block;
+        width: 200px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        margin: 10px 10px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.5);
+        transition: all .3s;
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.8);
         }
-    
+    }
     .active {
         a {
             color: #fff;
@@ -163,6 +157,8 @@ a {
     }
 }
 
+// about section
+
 .self-img {
     width: 150px;
     height: 150px;
@@ -173,7 +169,6 @@ a {
     opacity: .9;
     border: 1px solid #ccc;
     padding: 3px;
-    box-sizing: border-box;
     img {
         width: 100%;
         border-radius: 100%;
@@ -211,10 +206,10 @@ a {
     }
 }
 
-#about-me,#skills {
+#about-me,
+#skills {
     opacity: 0;
 }
-
 
 .personal-info {
     min-width: 350px;
@@ -230,31 +225,20 @@ a {
     width: 40px;
 }
 
-.flex {
-    display: flex;
-}
+// works
 
 #works {
-    height: 100vh;
+
+    &,
+    .col-md-2,.col-md-4 {
+        height: 100vh;
+    }
     overflow: hidden;
     background-size: cover;
     .col-md-4 {
         padding: 3px;
-        height: 100vh;
-    }
-    .col-md-2 {}
-    .awwwards,
-    .taobao {
-        width: 100%;
-        height: 100%;
-        transition: all .6s;
-    }
+    }    
     .knowledge {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        text-align: center;
-        transform: translateX(-50%) translateY(-50%);
         color: #fff;
         line-height: 1.4;
     }
@@ -304,7 +288,7 @@ a {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        width: 69%;
+        width: 67%;
         img {
             width: 100%;
             animation: scale 10s infinite linear;
@@ -312,19 +296,6 @@ a {
         }
     }
 }
-
-@keyframes scale {
-    0% {
-        transform: scale(1);
-    }
-    50%{
-     transform: scale(1.08);   
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
 .loader--spinningDisc {
     border: solid 0.5em #9b59b6;
     border-right-color: transparent;
@@ -338,17 +309,6 @@ a {
     animation: spinDisc 1.5s linear infinite;
     z-index: -1;
     margin: 0 auto;
-}
-
-@keyframes spinDisc {
-    50% {
-        border-top-color: #3498db;
-        border-bottom-color: #3498db;
-        background-color: #2ecc71;
-    }
-    100% {
-        transform: rotate(1turn);
-    }
 }
 
 .top-down {
@@ -367,33 +327,6 @@ a {
     margin-left: -23px;
     background: url(../images/arrow-down.png)50% 0 no-repeat;
 }
-
-@-webkit-keyframes arrow {
-    0%,
-    100%,
-    88%,
-    94% {
-        bottom: 3.5%
-    }
-    91%,
-    97% {
-        bottom: 1.5%
-    }
-}
-
-@keyframes arrow {
-    0%,
-    100%,
-    88%,
-    94% {
-        bottom: 3.5%
-    }
-    91%,
-    97% {
-        bottom: 1.5%
-    }
-}
-
 #roads {
     background: url(../images/map-light.jpg) center center;
     .foot {
@@ -417,7 +350,6 @@ a {
         position: absolute;
         top: 65%;
         left: 10%;
-
         width: 0;
         overflow: hidden;
         white-space: nowrap;
@@ -466,7 +398,56 @@ a {
 }
 
 .fa-hand-o-right {
-    animation:vertical-shake 2s infinite;
+    animation: vertical-shake 2s infinite;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes spinDisc {
+    50% {
+        border-top-color: #3498db;
+        border-bottom-color: #3498db;
+        background-color: #2ecc71;
+    }
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+@-webkit-keyframes arrow {
+    0%,
+    100%,
+    88%,
+    94% {
+        bottom: 3.5%
+    }
+    91%,
+    97% {
+        bottom: 1.5%
+    }
+}
+
+@keyframes arrow {
+    0%,
+    100%,
+    88%,
+    94% {
+        bottom: 3.5%
+    }
+    91%,
+    97% {
+        bottom: 1.5%
+    }
 }
 
 @keyframes step {
@@ -492,15 +473,13 @@ a {
 
 @keyframes vertical-shake {
     0% {
-        transform:translateX(0)
+        transform: translateX(0)
     }
-
     50% {
-        transform:translateX(20%)
+        transform: translateX(20%)
     }
-
     100% {
-        transform:translateX(0)
+        transform: translateX(0)
     }
 }
 
@@ -509,4 +488,3 @@ a {
         display: none;
     }
 }
-

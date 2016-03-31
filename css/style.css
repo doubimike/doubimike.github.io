@@ -60,9 +60,6 @@ a {
 .col-md-3 {
   width: 25%; }
 
-#works .col-md-2 {
-  height: 100vh; }
-
 .ov {
   overflow: hidden; }
 
@@ -137,8 +134,7 @@ a {
   border-radius: 100%;
   opacity: .9;
   border: 1px solid #ccc;
-  padding: 3px;
-  box-sizing: border-box; }
+  padding: 3px; }
   .self-img img {
     width: 100%;
     border-radius: 100%; }
@@ -169,7 +165,8 @@ a {
       display: block;
       margin-top: 12px; }
 
-#about-me, #skills {
+#about-me,
+#skills {
   opacity: 0; }
 
 .personal-info {
@@ -183,27 +180,15 @@ a {
 .fa-thumbs-o-up {
   width: 40px; }
 
-.flex {
-  display: flex; }
-
 #works {
-  height: 100vh;
   overflow: hidden;
   background-size: cover; }
-  #works .col-md-4 {
-    padding: 3px;
+  #works,
+  #works .col-md-2, #works .col-md-4 {
     height: 100vh; }
-  #works .awwwards,
-  #works .taobao {
-    width: 100%;
-    height: 100%;
-    transition: all .6s; }
+  #works .col-md-4 {
+    padding: 3px; }
   #works .knowledge {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    text-align: center;
-    transform: translateX(-50%) translateY(-50%);
     color: #fff;
     line-height: 1.4; }
   #works .art {
@@ -245,19 +230,12 @@ a {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 69%; }
+    width: 67%; }
     #works .create-by-hands img {
       width: 100%;
       animation: scale 10s infinite linear;
       height: 100vh; }
 
-@keyframes scale {
-  0% {
-    transform: scale(1); }
-  50% {
-    transform: scale(1.08); }
-  100% {
-    transform: scale(1); } }
 .loader--spinningDisc {
   border: solid 0.5em #9b59b6;
   border-right-color: transparent;
@@ -272,13 +250,6 @@ a {
   z-index: -1;
   margin: 0 auto; }
 
-@keyframes spinDisc {
-  50% {
-    border-top-color: #3498db;
-    border-bottom-color: #3498db;
-    background-color: #2ecc71; }
-  100% {
-    transform: rotate(1turn); } }
 .top-down {
   position: absolute;
   -webkit-animation: arrow;
@@ -295,24 +266,6 @@ a {
   margin-left: -23px;
   background: url(../images/arrow-down.png) 50% 0 no-repeat; }
 
-@-webkit-keyframes arrow {
-  0%,
-    100%,
-    88%,
-    94% {
-    bottom: 3.5%; }
-  91%,
-    97% {
-    bottom: 1.5%; } }
-@keyframes arrow {
-  0%,
-    100%,
-    88%,
-    94% {
-    bottom: 3.5%; }
-  91%,
-    97% {
-    bottom: 1.5%; } }
 #roads {
   background: url(../images/map-light.jpg) center center; }
   #roads .foot {
@@ -374,6 +327,38 @@ a {
 .fa-hand-o-right {
   animation: vertical-shake 2s infinite; }
 
+@keyframes scale {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.08); }
+  100% {
+    transform: scale(1); } }
+@keyframes spinDisc {
+  50% {
+    border-top-color: #3498db;
+    border-bottom-color: #3498db;
+    background-color: #2ecc71; }
+  100% {
+    transform: rotate(1turn); } }
+@-webkit-keyframes arrow {
+  0%,
+    100%,
+    88%,
+    94% {
+    bottom: 3.5%; }
+  91%,
+    97% {
+    bottom: 1.5%; } }
+@keyframes arrow {
+  0%,
+    100%,
+    88%,
+    94% {
+    bottom: 3.5%; }
+  91%,
+    97% {
+    bottom: 1.5%; } }
 @keyframes step {
   0% {
     height: 50vh; }

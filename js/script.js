@@ -6,7 +6,6 @@ requirejs.config({
         velocityui: 'velocity.ui',
         circleProgress: 'circle-progress',
         backtop: 'backtop',
-        // bootstrap: 'bootstrap.min',
         jpreLoader: 'jpreloader.min'
     },
     shim: {
@@ -18,10 +17,6 @@ requirejs.config({
             deps: ['jquery'],
             exports: 'circleProgress'
         },
-        // bootstrap: {
-        //     deps: ['jquery'],
-        //     exports: 'bootstrap'
-        // },
         jpreLoader: {
             deps: ['jquery'],
             exports: 'jpreLoader'
@@ -34,36 +29,20 @@ requirejs(['jquery', 'fullPage', 'velocity', 'velocityui', 'circleProgress', 'jp
     $(function() {
         $('body').jpreLoader({}, init);
         $('#fullpage').fullpage({
-            sectionsColor: ['#3ABC99', '#5CBEC4', '#81A9BF', '#52C6DA', '#6799B8'],
+            sectionsColor: ['#3ABC99', '#5CBEC4', '#81A9BF'],
             navigation: true,
-            navigationTooltips: ['关于我', '作品', '工作履历'],
+            navigationTooltips: ['Smile face', 'What makes me strong', 'Roads have been taken'],
             anchors: ['page1', 'page2', 'page3'],
             menu: '#fullpageMenu',
-            // fixedElements:'#fullpageMenu',
-            // paddingTop: '50px',
             onLeave: function(index, nextIndex, direction) {
                 var leavingSection = $(this);
-
-                //after leaving section 2
-                if(index==3){
-                    // $('.foot--left').removeClass('step--left');
-                    // $('.foot--right').removeClass('step--right');
-                    
-                }
-
                 if (index==3 || index==2) {
                     setCircle();
 
                 }
-
-               
-
-
             },
             afterLoad: function(anchorLink, index) {
                 var loadedSection = $(this);
-
-                //using index
                 if (index == 3) {
                     setTimeout(function(){
                         $('.foot--left').addClass('step--left');
@@ -75,19 +54,6 @@ requirejs(['jquery', 'fullPage', 'velocity', 'velocityui', 'circleProgress', 'jp
                         $('.come-on-to-meet-me').css('opacity', '1');
                     },21000)
                 };
-
-                //using anchorLink
-                if (anchorLink == 'secondSlide') {
-                    // alert("Section 2 ended loading");
-                }
-
-                // if (index==1) {
-                //     $('#fullpageMenu li').css('float', 'left');
-                // }
-
-
-
-
             }
         });
 
@@ -107,7 +73,6 @@ requirejs(['jquery', 'fullPage', 'velocity', 'velocityui', 'circleProgress', 'jp
 
             setCircle();
 
-            // $.Velocity
         };
 
         function setCircle() {
@@ -161,24 +126,6 @@ requirejs(['jquery', 'fullPage', 'velocity', 'velocityui', 'circleProgress', 'jp
                 $(this).find('strong').html((stepValue * 100).toFixed(0) + '<i>%</i>');
             });
         }
-
-        $('.weapon--taobao').on('mouseover', function(event) {
-            event.preventDefault();
-            $('.taobao').addClass('scale');
-        });
-        $('.weapon--taobao').on('mouseout', function(event) {
-            event.preventDefault();
-            $('.taobao').removeClass('scale');
-        });
-
-        $('.weapon--awwwards').on('mouseover', function(event) {
-            event.preventDefault();
-            $('.awwwards').addClass('scale');
-        });
-        $('.weapon--awwwards').on('mouseout', function(event) {
-            event.preventDefault();
-            $('.awwwards').removeClass('scale');
-        });
 
     });
 
