@@ -442,5 +442,7 @@ a {
 @media (max-width: 1200px) {
   #fp-nav {
     display: none; } }
+#mask .em {
+  color: red; }
 
 /*# sourceMappingURL=style.css.map */
