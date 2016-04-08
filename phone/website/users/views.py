@@ -1,9 +1,13 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- 
+
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.core.context_processors import csrf
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User  
 
-from users.models import User
+# from users.models import User
 from django.contrib.auth import *
 from django.shortcuts import redirect
 from django.contrib.auth import login as auth_login
@@ -40,12 +44,14 @@ def register(request):
 		form = UserCreationForm()
 	return render(request,'users/register.html',{'form':form})	 		
 
-def diff_response(request):
-    if request.user.is_authenticated():
-        content = "<p>my dear user</p>"
-    else:
-        content = "<p>you wired stranger</p>"
-    return HttpResponse(content)
-
 def success(request):
 	return render(request,'users/success.html')
+
+def checkUser(request):
+	username = request.GET['value']
+	try:
+		user = User.objects.get(username=username)
+		return HttpResponse('用户存在，请更换用户名')
+	except User.DoesNotExist:
+		return HttpResponse('用户名不存在，可以注册')
+

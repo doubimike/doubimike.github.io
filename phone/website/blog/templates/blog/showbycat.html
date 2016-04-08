@@ -1,0 +1,25 @@
+{% extends 'website/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="category ">
+    <h3>分类</h3>
+    <ul>
+        {% for category in categorys %}
+          <li><a href="/blog/{{category.category}}">{{category.category}}</a> <span>({{category.blog_set.all|length}}</span>)</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div>
+    <a href="/blog">分类:</a>
+    {{thiscat.category}}(共{{thiscat.blog_set.all|length}}篇文章)
+</div>
+
+<ul>
+{% for item in thiscat.blog_set.all %}
+	<li>
+	<span><a href="/blog/{{item.pub_date|date:'Y'}}/{{item.pub_date|date:'n'}}">{{item.pub_date|date:"Y年m月d日"}}</a> >> <a href="/blog/{{item.id}}" id='{{item.id}}'>{{item.blog_title}}</a></span></li>
+{% endfor %}
+</ul>
+{% endblock %}

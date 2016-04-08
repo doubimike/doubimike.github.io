@@ -1,7 +1,41 @@
 {% extends 'website/base.html' %}
 {% block content %}
-    {% for blog in blogs %}
-    <h2><a href="/blog/{{blog.id}}" id='{{blog.id}}'>{{blog.blog_title}}</a></h2>
-    <span>{{blog.pub_date}}</span>
-    {% endfor %}
+<div class="part2">
+<div>
+    <span>文章存档</span>
+    <a href="/blog/{{first_blog.pub_date|date:'Y'}}/{{first_blog.pub_date|date:'m'}}">按日期排列</a>
+</div>
+
+<div class="category">
+    <h3>分类</h3>
+    <ul>
+        {% for category in categorys %}
+          <li><a href="/blog/{{category.category}}">{{category.category}}</a><span> ({{category.blog_set.all|length}}篇)</span></li>
+        {% endfor %}
+    </ul>
+</div>
+</div>
+<div class="part1">
+<div class="newest-article module">
+        <h2 class="module__header"><a href="/blog/{{first_blog.id}}">{{ first_blog.blog_title }}</a></h2>
+
+        <span class="article-tag">分类：<a href="/blog/{{first_blog.blog_category}}">{{first_blog.blog_category}}</a></span> {% autoescape off %} {{ first_blog.blog_content|truncatechars:500 }} {% endautoescape %}
+        <a href="/blog/{{first_blog.id}}" class="goonreading    ">继续阅读全文</a>
+        <div class="article-info">
+            <span>Posted By <a href="/">{{first_blog.blog_author.name}}</a></span>
+            <span>{{ first_blog.pub_date|date:"Y年m月d日 h:m"}}</span>
+        </div>
+    </div>
+
+<h2>最近的20篇文章（共{{total_amount}}篇）</h2>
+<ul>
+{% for blog in blogs %}
+    <li><span>{{blog.pub_date|date:"Y年m月d日"}}</span> >> <a href="/blog/{{blog.id}}" id='{{blog.id}}'>{{blog.blog_title}}</a> 
+    </li>
+{% endfor %}
+</ul>
+<a href="/">返回首页</a>
+
+</div>
 {% endblock %}
+

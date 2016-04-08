@@ -15,6 +15,11 @@ h3 {
 
 h2 {
     text-align: center;
+
+}
+
+h4 {
+    margin-bottom: 0;
 }
 
 ul {
@@ -26,6 +31,81 @@ ul {
 a {
     text-decoration: none;
     color: #000;
+}
+
+// 遮罩层
+#mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 999;
+    .boxclose {
+        float: right;
+        margin-top: -15px;
+        margin-right: -15px;
+        cursor: pointer;
+        border-radius: 30px;
+        background: #605F61;
+        font-size: 31px;
+        font-weight: bold;
+        color: #fff;
+        border: 1px solid #AEAEAE;
+        display: inline-block;
+        line-height: 0px;
+        padding: 11px 3px;
+        text-decoration: none;
+        &:before {
+            content: "×";
+        }
+    }
+    .pre-words {
+        width: 700px;
+        min-width: 700px;
+        background-color: #F6F3D6;
+        z-index: 1000;
+        border-radius: 5px;
+        // overflow:hidden;
+        .container-inner {
+            padding: 0 20px 20px 20px;
+        }
+        h2 {
+            margin: 0;
+            border-radius: 5px 5px 0 0;
+            padding: 10px 0 ;
+        }
+    }
+
+    li {
+        margin-bottom: 2px;        
+    }
+
+    ul {
+        list-style: square inside;
+        padding: 5px 10px;
+        ul {
+            list-style: circle inside;
+            padding: 5px 10px;
+
+        }
+    }
+
+    h4 {
+        margin-top: 5px;
+        font-size: 18px;
+    }
+
+    .head {
+        background-color: #E0EBF6;
+
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
 }
 
 // 自制一个栅格系统解决响应式问题
@@ -82,6 +162,10 @@ a {
 
 .db {
     display: block;
+}
+
+.pl10 {
+    padding-left: 10px;
 }
 
 .br50 {
@@ -158,7 +242,6 @@ a {
 }
 
 // about section
-
 .self-img {
     width: 150px;
     height: 150px;
@@ -226,18 +309,17 @@ a {
 }
 
 // works
-
 #works {
-
     &,
-    .col-md-2,.col-md-4 {
+    .col-md-2,
+    .col-md-4 {
         height: 100vh;
     }
     overflow: hidden;
     background-size: cover;
     .col-md-4 {
         padding: 3px;
-    }    
+    }
     .knowledge {
         color: #fff;
         line-height: 1.4;
@@ -296,6 +378,7 @@ a {
         }
     }
 }
+
 .loader--spinningDisc {
     border: solid 0.5em #9b59b6;
     border-right-color: transparent;
@@ -327,6 +410,7 @@ a {
     margin-left: -23px;
     background: url(../images/arrow-down.png)50% 0 no-repeat;
 }
+
 #roads {
     background: url(../images/map-light.jpg) center center;
     .foot {

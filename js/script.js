@@ -36,7 +36,7 @@ requirejs(['jquery', 'fullPage', 'velocity', 'velocityui', 'circleProgress', 'jp
             menu: '#fullpageMenu',
             onLeave: function(index, nextIndex, direction) {
                 var leavingSection = $(this);
-                if (index==3 || index==2) {
+                if (index == 3 || index == 2) {
                     setCircle();
 
                 }
@@ -44,15 +44,15 @@ requirejs(['jquery', 'fullPage', 'velocity', 'velocityui', 'circleProgress', 'jp
             afterLoad: function(anchorLink, index) {
                 var loadedSection = $(this);
                 if (index == 3) {
-                    setTimeout(function(){
+                    setTimeout(function() {
                         $('.foot--left').addClass('step--left');
-                    $('.foot--right').addClass('step--right');
-                }, 1000);
+                        $('.foot--right').addClass('step--right');
+                    }, 1000);
                     $('.walk').width("100vw");
                     $('.walk-pic').css('left', '100vw');
-                    setTimeout(function(){
+                    setTimeout(function() {
                         $('.come-on-to-meet-me').css('opacity', '1');
-                    },21000)
+                    }, 21000)
                 };
             }
         });
@@ -72,6 +72,18 @@ requirejs(['jquery', 'fullPage', 'velocity', 'velocityui', 'circleProgress', 'jp
             });
 
             setCircle();
+
+            $('#boxclose, #mask').click(function() {
+                $('#pre-words').animate({ 'top': '-800px' }, 500, function() {
+                    $('#mask').fadeOut('fast');
+                    setCircle();
+                });
+            });
+
+            $('.pre-words').on('click', function(event) {
+                event.stopPropagation()
+            });
+
 
         };
 

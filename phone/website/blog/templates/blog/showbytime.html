@@ -1,0 +1,104 @@
+{% extends 'website/base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="part1">
+    <div>
+        <span>{{year}} {{month}} 文章存档</span>
+        {% if prevmonth %}
+            <a href="/blog/{{yearyear}}/{{prevmonth}}">上月</a>|
+        {% endif %}
+
+        {% if nextmonth %}
+            <a href="/blog/{{nextmonthyear}}/{{nextmonth}}">下月</a>
+        {% endif %} 
+    </div>
+
+
+
+    <div class="newest-article module">
+        <h2 class="module__header"><a href="/blog/{{first_blog.id}}">{{ first_blog.blog_title }}</a></h2>
+
+        <span class="article-tag">分类：<a href="/blog/{{first_blog.blog_category}}">{{first_blog.blog_category}}</a></span> {% autoescape off %} {{ first_blog.blog_content|truncatechars:500 }} {% endautoescape %}
+        <a href="/blog/{{first_blog.id}}" class="goonreading    ">继续阅读全文</a>
+        <div class="article-info">
+            <span>Posted By <a href="/">{{first_blog.blog_author.name}}</a></span>
+            <span>{{ first_blog.pub_date|date:"Y年m月d日 h:m"}}</span>
+        </div>        
+    </div>
+
+    <h2>{{year}} {{month}} 的所有文章 （共{{total_amount}}篇）</h2>
+    <ul>
+    {% for blog in blogs %}
+        <li><span>{{blog.pub_date|date:"Y年m月d日"}}</span> >> <a href="/blog/{{blog.id}}" id='{{blog.id}}'>{{blog.blog_title}}</a></li>
+        
+    {% endfor %}
+    </ul>
+    <a href="/">返回首页</a>
+
+    
+</div>
+
+<div class="part2">  
+
+
+
+    <div>
+        <h3>日期</h3>
+        <p>请选择月份：</p>
+        <form action="/blog/getyandm" id="getyandm">
+        <select name="year" id="year_select">
+            {% for year in year_list %}
+            <option value="{{year}}">{{year}}年</option>
+            {% endfor %}
+        </select>
+        <select name="month" id="month_select">
+            {% for month in month_list %}
+            <option value="{{month}}">{{month}}月</option>
+            {% endfor %}
+        </select>
+    
+        <button id="year-month-query">Go</button>
+        </form>
+    </div>
+
+    <div>
+        <h3>导航</h3>
+        <ul>
+        {% if prevmonth %}
+            <li>上月<a href="/blog/{{yearyear}}/{{prevmonth}}">{{yearyear}} {{prevmonth}}</a></li>
+            {% endif %}
+        {% if nextmonth %}
+            <li>下月<a href="/blog/{{nextmonthyear}}/{{nextmonth}}">{{nextmonthyear}} {{nextmonth}}</a></li>
+            {% endif %}    
+        </ul>
+    </div>
+
+    </div>
+ 
+   {% endblock %}
+
+{% block footer %}
+ <script type="text/javascript">
+     $('option[value={{year}}]').attr('selected', 'selected');
+$('option[value={{month}}]').attr('selected', 'selected');
+$('#year_select').on('change', function(event) {
+    event.preventDefault();
+    var year = $('#year_select').val();
+    $.get('/blog/1getmonth?', { year: year }, function(data) {
+        var back = $.parseJSON(data);
+        var goodhtml = [];
+        for (a in back) {
+            if (back[a] < 10) { x = back[a].toString() } else { x = back[a] }
+            _html = '<option value="' + x + '">' + back[a] + '月</option>'
+            goodhtml.push(_html)
+        }
+        $('#month_select').html(goodhtml.join(''));
+        $('option[value={{month}}]').attr('selected', 'selected');
+    });
+});
+
+$('#getyandm').on('submit', function(event) {
+    $(this).attr('action', '/blog/' + $('#year_select').val() + '/' + $('#month_select').val());
+});
+ </script>
+ {% endblock %}

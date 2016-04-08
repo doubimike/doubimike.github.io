@@ -1,3 +1,4 @@
+#coding:utf-8 
 """
 Django settings for website project.
 
@@ -14,7 +15,6 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -41,6 +41,10 @@ INSTALLED_APPS = (
     'blog',
     'website',
     'users',
+    'markdown_deux',
+    # 'tinymce',
+    'ckeditor',
+    'ckeditor_uploader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -67,6 +71,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.request',
             ],
         },
     },
@@ -80,10 +85,15 @@ WSGI_APPLICATION = 'website.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mike',
+        'USER': 'mike',
+        'PASSWORD': 'mike',
+        'HOST':'',
+        'PORT':'',
     }
 }
+
 
 
 # Internationalization
@@ -91,7 +101,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -105,11 +115,21 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# to find the static files
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    # os.path.join(BASE_DIR, "static"),
 ]
 
+STATIC_ROOT = '/Users/zhanghang/Documents/Github/doubimike.github.io/phone/website/static'
 
 
+MEDIA_ROOT = '/Users/zhanghang/Documents/Github/doubimike.github.io/phone/website/media/'
+
+MEDIA_URL = '/media/'
+
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_JQUERY_URL = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js'
+CKEDITOR_IMAGE_BACKEND='pillow'
 
 

@@ -9,3 +9,43 @@
 </form>
 
 {% endblock %}
+
+{% block footer %} 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+<script>
+	$('#id_username,#id_password1,#id_password2').addClass('required');
+	$('form').validate();
+
+	$('#id_username').on('keyup', function(e) {
+	e.preventDefault();
+	value = $('#id_username').val();
+	$.get('/checkUser?',{value:value},function (data) {
+		  $('.helptext:first').html(data)
+		});
+	});
+	var pas1 = $('#id_password1')
+	var pas2 = $('#id_password2')
+	pas2.attr('disabled', 'disabled');
+
+	pas1.on('keyup', function(event) {
+		if (pas1.val()=='') {
+			pas2.attr('disabled', 'disabled');
+		}
+		else {
+		pas2.attr('disabled', false);
+		}
+		/* Act on the event */
+	});
+	
+	pas2.on('keyup', function() {
+		if (pas2.val()!=pas1.val()) {
+			$('.helptext:last').html('两次输入的密码不一致')	
+		}
+		else{
+		$('.helptext:last').html('good to go')		
+		}	
+});
+
+</script>
+{% endblock %}

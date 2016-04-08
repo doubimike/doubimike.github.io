@@ -15,18 +15,36 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.staticfiles import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^cv/',include('cv.urls')),
-    url(r'^blog/$','blog.views.blogList'),
-    url(r'^$','website.views.index'),
-    url(r'^blog/(.+)/$','blog.views.blogShow'),
+    url(r'^blog/',include('blog.urls')),
+    url('^markdown/', include( 'django_markdown.urls')),
+    url(r'^$','website.views.index'),    
     url(r'^login/$','users.views.login'),
     url(r'^users/login/$','users.views.loginHandle'),
     url(r'^logout/$','users.views.logoutHandle'),
     url(r'^comment/$','website.views.comment'),
     url(r'^register/$','users.views.register'),
     url(r'^users/success/$','users.views.success'),
-    url(r'^test/$','users.views.diff_response'),
-]
+    url(r'^checkUser$','users.views.checkUser'),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+] 
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += [
+        url(r'^static/(?P<path>.*)$', views.serve),
+    ]
+
+if settings.DEBUG:
+    urlpatterns += [
+        url(r'^media/(?P<path>.*)$', views.serve),
+    ]

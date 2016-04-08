@@ -1,22 +1,76 @@
-{% extends 'website/base.html' %} {% block content %}
-<div class="about-me tac page" id="about">
-    <h2>关于我</h2>
-    <img src="/static/images/me.jpg" alt="myPic">
-    <p>张航</p>
-    <p>90年生</p>
-    <p>本科 国贸专业</p>
-    <p>18611210114</p>
-    <p>doubimike@qq.com</p>
+{% extends 'website/base.html' %} {% block content %} {% load markdown_deux_tags %}
+<div class="part1">
+    <div class="about-me module" id="about">
+        {% load staticfiles %}
+        
+        <h2 class="module__header">在这的自我介绍就随意点了。</h2>
+        <div class="module__content">
+        <img src="{% static 'website/images/me.jpg' %}" class="r" alt="myPic">
+            <ul>
+                <li>Mac控、音乐控，Github那份简历中有着对喜爱之人的致敬。</li>
+                <li>效率软件控，Alfred、Popclip、Wunderlist都是我的大爱。</li>
+                <li>学习方法论爱好者，你能体会到Anki对我的加持么？</li>
+                <li>编辑器爱用Sublime，配合着喜欢的音乐，键盘清脆的敲击声~理性的美感，艺术的快感，这感觉只可意会吧。</li>
+                <li>家里穷，以前的梦想简单而粗暴，就是当个商人赚钱，也绕了很远的路。现在是铁了心要当个创造者，入了编程的坑。</li>
+                <li>入坑之后发现自己的那么多的缺点弱点，嗨，之前活生生一个无比自信的人，被摧残地整个人都不好了。有时遇到Bug长时间解决不了，竟会质疑自己怎么那么『傻』！这世间的路有那么多条，你怎么就选了最艰难的这条？</li>
+                <li>到底是为什么呢？想着想着，我又不自觉地傻笑开来，旁边的人都觉得我疯了。</li>
+                <li>也许，这就是人生啊。</li>
+                <br>
+                <li>学了很久了，不满足于单纯学习带来的快感，学以致用、做些东西的时候到了。</li>
+                <li>我期待着...</li>
+            </ul>
+        </div>
+    </div>
+    <div class="module">
+        <h2 class="module__header">关于这个博客</h2>
+        <div class="module__content">
+            <ul>
+            <li>前后端及部署一手包办</li>
+            <li>界面有点丑请见谅~稍微漂亮的请左拐。</li>
+            <li>主要技术为Python+Django+Ajax+前端模板</li>
+            <li>麻雀虽小，五脏俱全吧。
+                <ul>
+                    <li>用户登录及注册</li>
+                    <li>博客管理系统：后台，按月按分类查询等</li>
+                    <li>和前端比较切合的点为：注册帐号利用Ajax与后台交互，利用jQuery Validation插件，按年份进行查找时服务端传送Json数据回客户端JS进行解析并渲染等等
+                    </li>
+                    
+                </ul>
+                <li>解决实际需求的编程来得最有挑战性，也最有成就感。</li>
+                    <li>编程即修行，开发过程中遇到无数问题，魔挡杀魔，要成为一种信仰。</li>
+            </li>
+            </ul>
+        </div>
+    </div>
 </div>
-<div class="skills page" id="skills">
-    <h2>主要技能</h2>
-    <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JS</li>
-        <li>jQuery</li>
-        <li>Python</li>
-    </ul>
-</div>
+<div class="part2">
+    <div class="newest-article module">
+        <h2 class="module__header"><a href="/blog/{{first_blog.id}}">{{ first_blog.blog_title }}</a></h2>
 
+        <span class="article-tag">分类：<a href="/blog/{{first_blog.blog_category}}">{{first_blog.blog_category}}</a></span> {% autoescape off %} {{ first_blog.blog_content|truncatechars:500 }} {% endautoescape %}
+        <a href="/blog/{{first_blog.id}}" class="goonreading    ">继续阅读全文</a>
+        <div class="article-info">
+            <span>Posted By <a href="/">{{first_blog.blog_author.name}}</a></span>
+            <span>{{ first_blog.pub_date|date:"Y年m月d日 h:m"}}</span>
+        </div>
+    </div>
+    <div class="newest-article-list module">
+        <h2 class="module__header">最新文章</h2>
+        <ul id="article-list">
+            {% for blog in blogs %}
+            <li> <span>{{blog.pub_date|date:"Y年m月d日 "}}>></span>
+                <h3 class="dib"><a href="/blog/{{blog.id}}" id='{{blog.id}}'>{{blog.blog_title}}</a></h3></li>
+            {% endfor %}
+            <li><a href="/blog">更多文章……</a></li>
+        </ul>
+    </div>
+    <div class="follow-me module">
+        <h2  class="module__header">Follow me</h2>
+        <ul>
+            <li><a href="http://doubimike.github.io/" target="_blank">我的网站</a>
+            </li>
+            <li><a href="https://github.com/doubimike" target="_blank">Github</a></li>
+        </ul>
+    </div>
+</div>
 {% endblock %}
