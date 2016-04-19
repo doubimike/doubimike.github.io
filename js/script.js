@@ -73,16 +73,16 @@ requirejs(['jquery', 'fullPage', 'velocity', 'velocityui', 'circleProgress', 'jp
 
             setCircle();
 
-            $('#boxclose, #mask').click(function() {
-                $('#pre-words').animate({ 'top': '-800px' }, 500, function() {
-                    $('#mask').fadeOut('fast');
-                    setCircle();
-                });
-            });
+            // $('#boxclose, #mask').click(function() {
+            //     $('#pre-words').animate({ 'top': '-800px' }, 500, function() {
+            //         $('#mask').fadeOut('fast');
+            //         setCircle();
+            //     });
+            // });
 
-            $('.pre-words').on('click', function(event) {
-                event.stopPropagation()
-            });
+            // $('.pre-words').on('click', function(event) {
+            //     event.stopPropagation()
+            // });
 
 
         };
